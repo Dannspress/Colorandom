@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><i>Colorandom</i></title>
+  <title>CRandom</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button>COLORANDOM!</button>
+  <button onclick="changeColor()">COLORANDOM!</button>
 </body>
+<script>
+  function getRandomHexaColor() {
+    let hex = "0123456789ABCDEF";
+    let sign = "#";
+
+    for (let i = 0; i < 6; i++) {
+      sign += hex[Math.floor(Math.random()*16)];
+    }
+
+    return sign;
+  }
+
+  function changeColor() {
+    let newColor = getRandomHexaColor();
+    document.body.style.backgroundColor = newColor;
+  }
+</script>
 </html>
